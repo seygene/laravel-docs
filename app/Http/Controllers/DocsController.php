@@ -23,5 +23,13 @@ class DocsController extends Controller
         $text = (new \App\Documentation)->get($file);
         return app(\Parsedown::class)->text($text);        
     }
+    
+    public function image($file) {
+        $image = $this->docs->image($file);
+        $image = $image->resize(300,200);
+        return response($image->encode('jpg'), 200, [
+            'Content-Type' => 'image/jpg'
+        ]);
+    }
 
 }

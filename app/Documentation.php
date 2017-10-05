@@ -10,10 +10,13 @@ class Documentation
         $content = File::get($this->path($file));
         return $this->replaceLinks($content);
     }
-        
-    protected function path($file) {
-        $file = ends_with($file, '.md') ? $file : $file . '.md';
-        $path = base_path('docs' . DIRECTORY_SEPARATOR . $file);
+    
+    public function image($file) {
+        return \Image::make($this->path($file, 'docs/images'));
+    }
+    protected function path($file, $dir = 'docs') {
+        $file = ends_with($file, ['.md', '.jpg']) ? $file : $file . '.md';
+        $path = base_path($dir . DIRECTORY_SEPARATOR . $file);
         
         if( ! File::exists($path)) {
             //dd($path);
