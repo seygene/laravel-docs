@@ -10,7 +10,7 @@ class Documentation
         $content = File::get($this->path($file));
         return $this->replaceLinks($content);
     }
-    
+        
     protected function path($file) {
         $file = ends_with($file, '.md') ? $file : $file . '.md';
         $path = base_path('docs' . DIRECTORY_SEPARATOR . $file);
