@@ -10715,7 +10715,7 @@ button.close {
 }
 
 body {
-  background-color: #ffffaa;
+  background-color: #ffffdd;
 }
 
 #app .docs__sidebar {
@@ -10723,7 +10723,7 @@ body {
 }
 
 #app pre {
-  background: #ffd;
+  background: #ffe;
   border-radius: 10;
 }
 
